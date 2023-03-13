@@ -1,0 +1,33 @@
+CLASS Subject
+
+    // Subject interacts *only* with Observable interface
+    REFERENCE to Observable list
+
+    FUNCTION attach Observable to Subject
+        ADD to Observable list
+    END FUNCTION
+
+    FUNCTION detach Observable from Subject
+        REMOVE from Observable list
+    END FUNCTION
+
+    FUNCTION notify all Observable in Observable list
+        FOR EACH Observable
+        CALL Observable update
+    END FUNCTION
+
+END CLASS
+
+
+INTERFACE Observable
+
+    FUNCTION update Observer object
+
+END INTERFACE
+
+
+CLASS Observer IMPLEMENTS Observable
+
+    FUNCTION update relevant Observer fields
+
+END CLASS

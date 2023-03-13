@@ -14,14 +14,19 @@ public class Adapter {
         return vh;
     }
 
-    public void onBindViewHolder() {
+    public void onBindViewHolder(int currStudent) {
 
         ViewHolder vh = onCreateViewHolder();
-        vh.studentName.text(ds.students[0].getStudentName());
-        vh.studentID.text(ds.students[0].getStudentID());
-        for (int i = 0; i < ds.students[0].getEnrolledCourses().length; i++) {
-            vh.enrolledCourses.append("<li>" + ds.students[0].getEnrolledCourses()[i] + "</li>");
+        Model firstStudent = ds.students[currStudent];
+
+        
+        vh.studentName.text(firstStudent.getStudentName());
+        vh.studentID.text(firstStudent.getStudentID());
+        for (int i = 0; i < firstStudent.getEnrolledCourses().length; i++) {
+            vh.enrolledCourses.append("<li>" + firstStudent.getEnrolledCourses()[i] + "</li>");
         }
+
+
 
         BufferedWriter writer = null;
         try{

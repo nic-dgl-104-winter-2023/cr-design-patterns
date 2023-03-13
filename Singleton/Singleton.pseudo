@@ -1,0 +1,19 @@
+CLASS Singleton
+    
+    // Only accessible within the class
+    DECLARE a protected instance
+
+    // Only accessible within the class
+    PRIVATE CONSTRUCTOR Singleton
+
+    // Accessible outside of the class
+    // Typically called `getInstance`
+    PUBLIC FUNCTION to return the protected instance of the class
+        CHECK instance hasn't yet been initialized
+            RETURN instance
+        ELSE
+            INITIALIZE instance of the class
+            RETURN instance
+
+END CLASS
+

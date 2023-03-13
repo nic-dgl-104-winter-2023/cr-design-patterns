@@ -4,7 +4,8 @@ public class appMain {
         
         Adapter a = new Adapter();
 
-        a.onBindViewHolder();
+        int currStudent = 0;
+        a.onBindViewHolder(currStudent);
 
     }
     
